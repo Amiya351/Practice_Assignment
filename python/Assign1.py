@@ -27,23 +27,23 @@ def get_password_feedback(password):
 
     #Check each criterion and collect issues
     if len(password)< 8:
-        issues.append("Password must be at least 8 characters long")
+        issues.append("❌ Password must be at least 8 characters long")
     else:
         issues.append("Length requirement met")
     if not re.search(r'[A-Z]', password):
-        issues.append("Password must contain at least one uppercase letter")
+        issues.append("❌ Password must contain at least one uppercase letter")
     else:
         issues.append("Contains uppercase letter")
     if not re.search(r'[a-z]',password):
-        issues.append("Password must contain at least one lowercase letter")
+        issues.append("❌ Password must contain at least one lowercase letter")
     else:
         issues.append("Contains lowercase letter")
     if not re.search(r'\d', password):
-        issues.append("Password must contain at least one digit (0-9)")
+        issues.append("❌ Password must contain at least one digit (0-9)")
     else:
         issues.append("Contains digit")
     if not re.search(r'[!@#$%^&*()_+\-=\[\]{};:\'",.<>?/\\|`~]', password):
-        issues.append("Password must contain at least one special character (!@#$%...)")
+        issues.append("❌ Password must contain at least one special character (!@#$%...)")
     else:
         issues.append("Contains special character")
     
@@ -91,7 +91,7 @@ def main():
             print("\n SUCCESS! Your password is strong!")
         else:
             print("\n WARNING! Your password is weak.")
-            print("Please address the issues marked with ")
+            print("Please address the issues marked with ❌")
         
         print()
 
